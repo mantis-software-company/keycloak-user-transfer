@@ -1,0 +1,28 @@
+db:
+  host: "localhost"
+  user: "postgres"
+  password: "p4ssw0rd"
+  database: "myservice"
+  cursor_fetch_size: 100
+  user_sql: |
+    select * from users
+keycloak:
+  base_url: https://sso.myhost.tld
+  realm: myservice-users
+  admin-cli-secret: SOTTvLEpI6kiZQ6H09Zi39nSb8LDaDSR
+mappings:
+  user_fields:
+    username: user_name
+    firstName: name
+    lastName: surname
+    email: email
+    enabled: enabled
+    emailVerified: email_verified
+  user_attributes:
+    bio: user_bio
+    address: postal_address
+  groups:
+    ADMINS: e495fa56-606a-4ed4-b0c9-b0da54f1bef2
+    REGULAR_USERS: 2da350dd-52d0-413f-9d7a-2f2827b55ee7
+  groups_field: user_groups
+  groups_delimiter: ';'
