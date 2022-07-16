@@ -53,13 +53,13 @@ def create_user(user: dict) -> str:
         "firstName": user[config["mappings"]["user_fields"]["firstName"]],
         "lastName": user[config["mappings"]["user_fields"]["lastName"]],
         "email": user[config["mappings"]["user_fields"]["email"]],
-        "enabled": str2bool(config["mappings"]["user_fields"]["enabled"]),
-        "emailVerified": str2bool(config["mappings"]["user_fields"]["emailVerified"]),
+        "enabled": str2bool(user[config["mappings"]["user_fields"]["enabled"]]),
+        "emailVerified": str2bool(user[config["mappings"]["user_fields"]["emailVerified"]]),
         "credentials": [
             {
                 "temporary": True,
                 "type": "password",
-                "value": token_urlsafe(16)
+                "value": token_urlsafe(32)
             }
         ],
         "attributes": {}

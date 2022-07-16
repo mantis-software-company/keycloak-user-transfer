@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="keycloak-user-transfer",
-    version="1.0.1",
+    version="1.0.2",
     author="Furkan Kalkan",
     author_email="furkankalkan@mantis.com.tr",
     description="Yet another tool for transferring users from PostgreSQL to Keycloak using Keycloak REST API.",
